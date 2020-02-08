@@ -1,0 +1,82 @@
+<ion-header class="header_bg bg-transparent">
+    <!--
+    <ion-navbar>
+        <ion-title>{{'home' | translate}}</ion-title>
+    </ion-navbar>
+-->
+    <ion-list no-lines>
+        <ion-item class="search">
+            <h2>Pay<span class="text-theme">dab</span></h2>
+            <img src="assets/imgs/ic_search.png" item-end>
+        </ion-item>
+        <ion-item class="">
+            <ion-row text-center>
+                <ion-col col-3 (click)="phonerecharge()">
+                    <img src="assets/imgs/ic_recharge.png">
+                    <h6>Topup</h6>
+                </ion-col>
+                <ion-col col-3 (click)="tv()">
+                    <img src="./assets/imgs/television.png">
+                    <h6>TV Sub</h6>
+                </ion-col>
+                <ion-col col-3 (click)="data()">
+                    <img src="assets/imgs/ic_broadband.png">
+                    <h6>Data</h6>
+                </ion-col>
+                <ion-col col-3 (click)="electric()">
+                    <img src="assets/imgs/ic_electricity.png">
+                    <h6>Electricity</h6>
+                </ion-col>
+            </ion-row>
+            <ion-row text-center>
+                <ion-col col-3></ion-col>
+                <ion-col col-3 (click)="flight()">
+                    <img src="./assets/imgs/ic_flights.png">
+                    <h6>Flights</h6>
+                </ion-col>
+                <ion-col col-3 (click)="education()">
+                    <img src="assets/imgs/books.png">
+                    <h6>Education</h6>
+                </ion-col>
+                <ion-col col-3></ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+</ion-header>
+
+<ion-content class="bg-color">
+    <ion-list no-lines>
+        <ion-card>
+            <div class="card_bg center_img">
+                <img src="assets/imgs/card_bg2.png" class="crop_img">
+            </div>
+            <h2>{{'save_on_bill_payments' | translate}}</h2>
+            <ion-scroll scrollX="true">
+                <ion-item>
+                    <h3>Mobile Recharge</h3>
+                    <div class="text d-flex">
+                        <p>
+                            Recharging through paper cards has never been easy as you may miss the pin of the card and end up losing money...
+                        </p>
+                    </div>
+                </ion-item>
+                <ion-item>
+                    <h3>Bills Payment</h3>
+                    <div class="text d-flex">
+                        <p>
+                            Our Bill Payment system is also great in delivery and you can pay any service provider through our quick and fast system...
+                        </p>
+                    </div>
+                </ion-item>
+                <ion-item>
+                    <h3>Why use us?</h3>
+                    <div class="text d-flex">
+                        <p>
+                            Our system is 100% secured and we assure you of maximum protection of your cards and personal details...
+                        </p>
+                    </div>
+                </ion-item>
+            </ion-scroll>
+        </ion-card>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Education</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="form">
+        <ion-list no-lines>
+            <!-- <ion-item>
+                <p item-start text-end>{{'prepaid' | translate}}</p>
+                <ion-toggle checked="false"></ion-toggle>
+                <p item-end text-start>{{'postpaid' | translate}}</p>
+            </ion-item> -->
+            <ion-item>
+                <ion-label>Select educational payment</ion-label>
+                <ion-select [(ngModel)]="network" (ionChange)="getExams()">
+                    <ion-option *ngFor="let i of networks" value="{{i.name}}||{{i.serviceID}}">{{i.name}}</ion-option>
+                </ion-select>
+                <ion-icon class="material-icons" item-end>keyboard_arrow_down</ion-icon>
+            </ion-item>
+            <ion-item *ngIf="plans && plans.length>0">
+                <ion-label>Select exam type</ion-label>
+                <ion-select [(ngModel)]="plan" (ionChange)="setPrice()">
+                    <ion-option *ngFor="let i of plans" value="{{i.name}}||{{i.variation_code}}||{{i.variation_amount}}">{{i.name}}</ion-option>
+                </ion-select>
+                <ion-icon class="material-icons" item-end>keyboard_arrow_down</ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="email" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="number" [(ngModel)]="phone" placeholder="Phone"></ion-input>
+                <ion-icon class="material-icons" item-end>account_box</ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-input type="number" [(ngModel)]="amount" placeholder="Amount" readonly></ion-input>
+            </ion-item>
+        </ion-list>
+        <button ion-button block class="btn" [disabled]="network=='' || email=='' || phone=='' || amount==''" (click)="presentConfirm()">Pay Now</button>
+    </div>
+
+    <!-- <div class="banner">
+        <div class="banner_img">
+            <img src="assets/imgs/banner3.png">
+        </div>
+        <div class="banner_text" text-right>
+            <h3 text-uppercase>Winter Sale</h3>
+            <h2>Flat 50% OFF</h2>
+            <h4 text-uppercase>{{'shop_now' | translate}}</h4>
+        </div>
+    </div> -->
+</ion-content>
